@@ -1,0 +1,6 @@
+[submodule "themes/simonesanfilippo_theme"]
+	path = themes/simonesanfilippo_theme
+	url = https://github.com/simosanfilippo/simonesanfilippo_theme.git
+[submodule "simonesanfilippo/themes/simonesanfilippo_theme"]
+	path = simonesanfilippo/themes/simonesanfilippo_theme
+	url = https://github.com/simosanfilippo/simonesanfilippo_theme.git
