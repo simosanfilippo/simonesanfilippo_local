@@ -6,13 +6,35 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 16 Oct 2024 21:03:27 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>http://localhost:1313/posts/primo-post/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/primo-post/</guid>
-      <description>&lt;p&gt;date = &amp;lsquo;2024-10-16T21:21:39+02:00&amp;rsquo;&#xA;draft = false&#xA;title = &amp;lsquo;Primo Post&amp;rsquo;&#xA;type: &amp;lsquo;post&amp;rsquo;&lt;/p&gt;&#xA;&lt;p&gt;opopopopopo&lt;/p&gt;</description>
+      <title>sync</title>
+      <link>http://localhost:1313/posts/sync/</link>
+      <pubDate>Wed, 16 Oct 2024 21:03:27 +0200</pubDate>
+      <guid>http://localhost:1313/posts/sync/</guid>
+      <description>&lt;p&gt;sync&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Primo Post</title>
+      <link>http://localhost:1313/posts/a/</link>
+      <pubDate>Wed, 16 Oct 2024 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/posts/a/</guid>
+      <description>&lt;p&gt;Questo è il contenuto del primo post.&#xA;&lt;b&gt;Chissà perché il bibliotecario ha sempre quel muso. Forse si annoia, non gli piace il suo lavoro. Magari odia i colleghi, magari non guadagna abbastanza, mantiene una famiglia, ha dei bambini? O magari è solamente inespressivo, dentro esplode di gioia senza lasciarlo vedere all’esterno. 300 battute terminate.&lt;/b&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>chiss perch il</title>
+      <link>http://localhost:1313/posts/chiss-perch-il/</link>
+      <pubDate>Tue, 15 Oct 2024 12:03:41 +0200</pubDate>
+      <guid>http://localhost:1313/posts/chiss-perch-il/</guid>
+      <description>&lt;p&gt;Chissà perché il bibliotecario ha sempre quel muso. Forse si annoia, non gli piace il suo lavoro. Magari odia i colleghi, magari non guadagna abbastanza, mantiene una famiglia, ha dei bambini? O magari è solamente inespressivo, dentro esplode di gioia senza lasciarlo vedere all&amp;rsquo;esterno. 300 battute terminate.&lt;/p&gt;&#xA;&lt;p&gt;Mi permette di superarle, il contatore si è colorato di rosso ma posso postare comunque.&lt;/p&gt;&#xA;&lt;p&gt;La bibliotecaria invece si gira, sorride, guarda chiunque entri ed esca dall&amp;rsquo;entrata principale. Devo resistere all&amp;rsquo;impulso di calcolare quanti secondi al giorno sprechi per alzare lo sguardo, voltarsi verso il rumore di passi, ammiccare in quella direzione, fare quel sorriso di cortesia, tornare ai cristalli liquidi, riprendere il filo prima di inviare la richiesta di prestito ad un&amp;rsquo;altra biblioteca, ordinare un libro appena uscito, mandarmi il sollecito di riconsegna scrivendo in grassetto il numero di giorni di ritardo.&#xA;Cosa altro fate, voi bibliotecari? E lo chiedo con sincera curiosità, ho superato da tempo il modo di fare spocchioso di chi pensa esistano lavori più nobili di altri, lavori di cui ci si debba vergognare e altri di cui andar fieri. Ho abbandonato anche la sensazione di disagio provata quando qualcuno mi guarda male e mi ritiene uno stupido se dico che sono una prostituta, che vendo il mio corpo in cambio di denaro, che tutto è una prestazione di servizio, le mie facoltà intellettive, di fatto il mio cervello, la mia capacità computazionale, i miei occhi, le diottrie perse stando davanti ad uno schermo che li fa bruciare, le ernie di mio padre che dolgono dopo trenta anni che fa il muratore, le mani deformate di mia madre dopo mezzo secolo a raccogliere frutta, controllarla, girarla ruotando il polso, analizzandola dalle fessure delle palpebre. E i miei genitori non sono dispiaciuti della svendita del mio corpo, sono anzi fieri di avere un figlio che guadagna stando seduto, senza doversi rovinare come loro. Sarebbero però dispiaciuti se avessero avuto una figlia e questa avesse deciso di prostituirsi, per l&amp;rsquo;accezione classica del termine, se avesse deciso di fare la sex worker. Ma perché? Mi infastidisce chi tenta di imporre agli altri il proprio stile di vita, i propri pensieri, le proprie ideologie, il proselitismo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>this is my</title>
+      <link>http://localhost:1313/posts/this-is-my/</link>
+      <pubDate>Thu, 03 Oct 2024 12:45:14 +0200</pubDate>
+      <guid>http://localhost:1313/posts/this-is-my/</guid>
+      <description>&lt;p&gt;This is my first post. Freaking love you, L.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
