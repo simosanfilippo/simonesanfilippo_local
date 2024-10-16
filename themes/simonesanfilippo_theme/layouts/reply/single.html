@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<article class="h-entry reply">
+    <header>
+        <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "02 January 2006, 3:04 PM" }}</a></time>
+    </header>
+    <section class="replying-to">
+        Replying to: <img src="{{ .Params.reply_to_avatar }}" width="22" height="22" alt="{{ .Params.reply_to_username }}" />
+        {{ if eq .Params.reply_to_hostname "micro.blog" }}
+            <a href="{{ .Params.reply_to_url }}" class="u-in-reply-to">@{{ .Params.reply_to_username }}</a>
+        {{ else }}
+            <a href="{{ .Params.reply_to_url }}" class="u-in-reply-to">{{ .Params.reply_to_hostname }}</a>
+        {{ end }}
+    </section>
+    <section class="e-content post-body">
+        {{ .Content }}
+    </section>
+</article>
+
+{{ end }}

@@ -1,0 +1,18 @@
+{{ define "main" }}
+	<header>
+		<h1 class="p-name">{{ .Title | upper }}</h1>
+	</header>
+		  
+	<ul id="post-list" class="h-feed">
+
+	{{ $n_items := 25}}
+	{{ $list := first $n_items (where .Data.Pages.ByDate.Reverse "Type" "reply") }}
+	{{ range $list  }}
+		{{ partial "post-item.html" . }}
+	{{ end }}
+
+	</ul>
+
+	<p style="text-align: center; font-size: 1rem;">Only the last {{ $n_items }} replies are shown.</p>
+
+{{ end }}

@@ -1,0 +1,10 @@
+name = "simonesanfilippo_theme"
+license = "MIT"
+description = ""
+tags = []
+features = []
+min_version = "0.91.0"
+
+[author]
+  name = "simonesanfilippo"
+  homepage = "simonesanfilippo.xyz"

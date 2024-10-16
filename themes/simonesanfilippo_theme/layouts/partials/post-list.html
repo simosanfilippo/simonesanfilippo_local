@@ -1,0 +1,27 @@
+<ul id="post-list" class="h-feed">
+
+{{ if or .IsHome .Site.Params.paginate_categories }}
+	{{ $paginator := .Paginate (where .Pages.ByDate.Reverse "Type" "post") }}
+	{{ $list := $paginator.Pages }}
+	{{ range $list  }}
+		{{ partial "post-item.html" . }}
+	{{ end }}
+{{ else }}
+	<header>
+		<h1 class="p-name">#{{ .Title | upper }}</h1>
+	</header>
+	{{ $list := where .Pages.ByDate.Reverse "Type" "post" }}
+	{{ range $list  }}
+		{{ partial "post-item.html" . }}
+	{{ end }}
+{{ end }}
+
+</ul>
+
+{{/*{{ if .IsHome }}
+	{{ if .Site.Params.paginate_home }}
+		{{ partial "pagination" . }}
+	{{ end }}
+{{ else if .Site.Params.paginate_categories }}
+	{{ partial "pagination" . }}
+{{ end }}*/}}

@@ -1,0 +1,42 @@
+{{ define "main" }}
+<article class="h-entry post">
+  <header>
+    <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "02 January 2006" }}</a></time>
+	  {{ with .Title }}
+    <h1 class="p-name">{{ . }}</h1>
+    {{ end }}
+  </header>
+  <section class="e-content post-body">
+      {{ .Content }}
+  </section>
+  <footer>
+    <section class="tag-container">
+      {{ range $idx, $category := .Params.categories }}
+      {{- if ne $idx 0 }}, {{ end }}<a class="tag-link" href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+      {{- end }}
+    </section>
+    <hr>
+    <section class="comments-container">
+	    <p>Let’s talk about it → hello {at} simonesanfilippo {dot} xyz</p> 
+    </section>
+    <hr>
+    <section class="prevnext-container">
+      <ul>
+        {{ with .NextInSection }}
+          <li>
+            <div>Next » </div>
+            <a href="{{ .Permalink }}">{{ if .Title }}{{ .Title }}{{ else }}{{ .Date.Format "3:04 PM, 02 Jan 2006" }}{{ end }}</a>
+          </li>
+        {{ end }}
+        {{ with .PrevInSection }}     
+          <li>
+            <div>Previous « </div>
+            <a href="{{ .Permalink }}">{{ if .Title }}{{ .Title }}{{ else }}{{ .Date.Format "3:04 PM, 02 Jan 2006" }}{{ end }}</a>
+          </li>
+        {{ end }}
+      </ul>      
+   </section>
+
+  </footer>
+</article>
+{{ end }}

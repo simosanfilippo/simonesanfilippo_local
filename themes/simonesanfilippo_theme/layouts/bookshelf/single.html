@@ -1,0 +1,21 @@
+{{ define "main" }}
+<header>
+    <h1 class="p-name">{{ .Title | upper }}</h1>
+</header>
+
+<h3>{{ "Currently Reading" | upper }}</h3>
+<ul class="shelf">
+{{ range .Site.Data.bookshelves.currentlyreading }}
+    {{ partial "book-item.html" . }}
+{{ end }}
+</ul>
+
+
+<h3>{{ "Finished" | upper }}</h3>
+<ul class="shelf">
+{{ range .Site.Data.bookshelves.bookshelf }}
+    {{ partial "book-item.html" . }}
+{{ end }}
+</ul>
+
+{{ end }}

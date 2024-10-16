@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<ul id="post-list" class="h-feed">
+
+{{ if or .IsHome .Site.Params.paginate_categories }}
+	{{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") }}
+	{{ $list := $paginator.Pages }}
+	{{ range $list  }}
+		{{ partial "post-item.html" . }}
+	{{ end }}
+{{ else }}
+	{{ $list := where .Site.Pages.ByDate.Reverse "Type" "post" }}
+	{{ range $list  }}
+		{{ partial "post-item.html" . }}
+	{{ end }}
+{{ end }}
+
+</ul>
+
+<p style="text-align: center; font-size: 1rem;">Enough scrolling. You'll find older posts in the <a href="/archive">archive</a>.</p>
+
+{{ end }}
