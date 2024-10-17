@@ -43,3 +43,5 @@ paginate = 10                      # Numero di post per pagina
   changefreq = "monthly"
   priority = 0.5
   filename = "sitemap.xml"
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
