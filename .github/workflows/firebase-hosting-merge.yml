@@ -7,7 +7,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 * * * *'  # Esegui ogni ora
+    - cron: '* * * * *'  # Esegui ogni ora
 
 jobs:
   build_and_deploy:
