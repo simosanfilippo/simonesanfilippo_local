@@ -1,5 +1,4 @@
 ---
-title: "chiss perch il"
 date: "2024-10-15T12:03:41+02:00"
 external_url: "https://simone-sanfilippo.micro.blog/2024/10/15/chiss-perch-il.html"
 type: "post"

@@ -26,16 +26,17 @@ https.get(feedUrl, (res) => {
     // Loop through each post in the JSON feed
     feed.items.forEach(item => {
       // Extract necessary data from each post
-      const { id, content_html, date_published, url } = item;
+      const { id, content_html, date_published, url, title } = item;
       console.log(`Date published: ${date_published}`)
       // Generate a clean filename based on the post URL or ID
       const filename = url.split('/').pop().replace('.html', '') || id.split('/').pop();
       const filePath = path.join(outputDir, `${filename}.md`);
 
+const mdTitle = title?`title: "${title}"\n`:''
+
       // Create the markdown content with front matter (using external_url instead of url)
       const markdownContent = `---
-title: "${filename.replace(/-/g, ' ')}"
-date: "${date_published}"
+${mdTitle}date: "${date_published}"
 external_url: "${url}"
 type: "post"
 ---

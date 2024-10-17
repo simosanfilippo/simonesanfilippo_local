@@ -16,7 +16,7 @@
         </section>
     {{ else }}
         <div class="e-content">
-            {{ $truncatedContent := .Content | plainify | truncate 10 "" }} <!-- Rimuovi i puntini di truncate -->
+            {{ $truncatedContent := .Content | plainify | truncate 300 "" }} <!-- Rimuovi i puntini di truncate -->
             {{ $originalContent := .Content | plainify }}
             {{ $isTruncated := gt (len $originalContent) 10 }}
             
