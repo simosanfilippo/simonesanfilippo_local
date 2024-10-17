@@ -1,0 +1,45 @@
+baseURL = "simonesanfilippo.xyz"  # URL del tuo sito
+languageCode = "it"               # Codice della lingua del sito
+title = "Il mio sito con Hugo"     # Titolo del sito
+theme = "simonesanfilippo_theme"                 # Nome del tema Hugo che stai usando
+enableRobotsTXT = true             # Genera il file robots.txt automaticamente
+paginate = 10                      # Numero di post per pagina
+
+# Configurazioni relative ai permalinks (link permanenti)
+[permalinks]
+  post = "/:slug/"
+
+# Configurazioni per il menu di navigazione
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+
+# Configurazioni per i parametri del sito
+[params]
+  description = "Questo è il mio sito Hugo"
+  author = "Simone Sanfilippo"
+
+# Impostazioni di output per generare contenuti statici
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+  taxonomy = ["HTML"]
+  taxonomyTerm = ["HTML"]
+
+# Configurazioni per la SEO
+[frontmatter]
+  date = "2024-10-17"
+  lastmod = "2024-10-17"
+
+# Configurazione della sitemap
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
