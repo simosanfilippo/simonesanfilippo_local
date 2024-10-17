@@ -4,25 +4,25 @@
         <header>
             <h2><a href="{{ .Permalink }}" class="p-name">{{ .Title }}</a></h2>
         </header>
-        <section class="post-body e-content">
-            {{ $truncatedContent := .Content | truncate 300 "" }} <!-- Rimuovi i puntini di truncate -->
+        <section class="post-body e-content content-puntini">
+{{ $truncatedContent := .Content | truncate 300 "" }} <!-- Rimuovi i puntini di truncate -->
             {{ $originalContent := .Content }}
             {{ $isTruncated := gt (len $originalContent) 300 }}
             
             {{ $truncatedContent }}
             {{ if $isTruncated }}
-                <a href="{{ .Permalink }}">...</a> <!-- Puntini cliccabili solo se è troncato -->
+                <a class="puntini" href="{{ .Permalink }}">...</a> <!-- Puntini cliccabili solo se è troncato -->
             {{ end }}
         </section>
     {{ else }}
-        <div class="e-content">
+        <div class="e-content content-puntini">
             {{ $truncatedContent := .Content | truncate 300 "" }} <!-- Rimuovi i puntini di truncate -->
-            {{ $originalContent := .Content }}
+{{ $originalContent := .Content }}
             {{ $isTruncated := gt (len $originalContent) 10 }}
             
             {{ $truncatedContent }}
             {{ if $isTruncated }}
-                <a href="{{ .Permalink }}">...</a> <!-- Puntini cliccabili solo se è troncato -->
+                <a class="puntini" href="{{ .Permalink }}">...</a> <!-- Puntini cliccabili solo se è troncato -->
             {{ end }}
         </div>
     {{ end }}

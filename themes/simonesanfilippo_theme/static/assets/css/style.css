@@ -598,3 +598,19 @@ ul.shelf .title a:after:hover {
     padding-left: calc(var(--spacing) / 2);
   }
 }
+
+.e-content.content-puntini {
+  display: block; /* Permetti al contenuto di andare a capo */
+}
+
+.e-content.content-puntini p {
+  display: inline; /* Mantieni il paragrafo in linea ma su più righe se necessario */
+}
+
+.e-content.content-puntini a.puntini {
+  display: inline-block; /* Mantieni i puntini in linea col testo */
+  margin-left: 5px; /* Spazio tra il contenuto e i puntini */
+  text-decoration: none; /* Facoltativo, per rimuovere il sottolineato */
+  white-space: nowrap; /* Evita che i puntini vadano a capo */
+  vertical-align: bottom; /* Allinea i puntini all'ultima riga del testo */
+}
