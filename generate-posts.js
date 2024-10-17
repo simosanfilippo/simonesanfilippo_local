@@ -27,7 +27,7 @@ https.get(feedUrl, (res) => {
     feed.items.forEach(item => {
       // Extract necessary data from each post
       const { id, content_html, date_published, url } = item;
-
+      console.log(`Date published: ${date_published}`)
       // Generate a clean filename based on the post URL or ID
       const filename = url.split('/').pop().replace('.html', '') || id.split('/').pop();
       const filePath = path.join(outputDir, `${filename}.md`);
