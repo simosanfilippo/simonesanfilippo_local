@@ -2,15 +2,18 @@
     <ul>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-            {{ if .Page.Params.redirect_url }}
-                <li {{ if $currentPage.IsMenuCurrent "main" . }}class="active"{{ end }}>
-                    <a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
-                </li>
-            {{ else }}
-                <li {{ if $currentPage.IsMenuCurrent "main" . }}class="active"{{ end }}>
+            <li {{ if $currentPage.IsMenuCurrent "main" . }}class="active"{{ end }}>
+                {{ if .Page }}
+                    {{ if .Page.Params.redirect_url }}
+                        <a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
+                    {{ else }}
+                        <a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+                    {{ end }}
+                {{ else }}
+                    <!-- Se .Page non esiste, puoi decidere di non mostrare nulla o gestire diversamente -->
                     <a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
-                </li>
-            {{ end }}
+                {{ end }}
+            </li>
         {{ end }}
     </ul>
 </nav>
