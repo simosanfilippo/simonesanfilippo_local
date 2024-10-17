@@ -3,6 +3,7 @@
 
 name: Deploy cron
 on:
+  workflow_dispatch:
   schedule:
     - cron: '58 * * * *' 
 
