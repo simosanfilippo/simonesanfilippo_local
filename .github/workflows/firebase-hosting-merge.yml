@@ -25,7 +25,7 @@ jobs:
         
       # Esegui lo script generate-posts.js
       - name: Esegui script generate-posts.js
-        run: node generate-posts.js
+        run: node generate-posts.js && cat content/posts/chiss-perch-il.md
         
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
