@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: npm ci && npm run build
       
-      - name: Esegui script ciao.js
+      - name: Esegui script generate-posts.js
         run: node generate-posts.js
         
       - uses: FirebaseExtended/action-hosting-deploy@v0
