@@ -33,11 +33,6 @@ paginate = 10                      # Numero di post per pagina
   taxonomy = ["HTML"]
   taxonomyTerm = ["HTML"]
 
-# Configurazioni per la SEO
-[frontmatter]
-  date = "2024-10-17"
-  lastmod = "2024-10-17"
-
 # Configurazione della sitemap
 [sitemap]
   changefreq = "monthly"
