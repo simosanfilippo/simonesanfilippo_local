@@ -8,12 +8,6 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
-// Function to convert date to UTC format
-function convertToUTC(dateString) {
-  const date = new Date(dateString);
-  return date.toISOString(); // Converts to UTC format
-}
-
 // Fetch JSON data from the feed URL
 const feedUrl = 'https://simone-sanfilippo.micro.blog/feed.json';
 
@@ -33,11 +27,7 @@ https.get(feedUrl, (res) => {
     feed.items.forEach(item => {
       // Extract necessary data from each post
       const { id, content_html, date_published, url } = item;
-      console.log(`Date published: ${date_published}`);
-
-      // Convert date to UTC format
-      const formattedDate = convertToUTC(date_published);
-
+      console.log(`Date published: ${date_published}`)
       // Generate a clean filename based on the post URL or ID
       const filename = url.split('/').pop().replace('.html', '') || id.split('/').pop();
       const filePath = path.join(outputDir, `${filename}.md`);
@@ -45,7 +35,7 @@ https.get(feedUrl, (res) => {
       // Create the markdown content with front matter (using external_url instead of url)
       const markdownContent = `---
 title: "${filename.replace(/-/g, ' ')}"
-date: "${formattedDate}"
+date: "${date_published}"
 external_url: "${url}"
 type: "post"
 ---
