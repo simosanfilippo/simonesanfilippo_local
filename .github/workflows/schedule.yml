@@ -4,7 +4,7 @@
 name: Deploy cron
 on:
   schedule:
-    - cron: '*/16 * * * *' 
+    - cron: '58 * * * *' 
 
 jobs:
   build_and_deploy:
