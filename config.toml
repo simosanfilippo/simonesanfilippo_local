@@ -45,3 +45,8 @@ paginate = 10                      # Numero di post per pagina
   filename = "sitemap.xml"
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
