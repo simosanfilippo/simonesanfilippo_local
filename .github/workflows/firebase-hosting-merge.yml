@@ -20,13 +20,13 @@ jobs:
         with:
           hugo-version: '0.100.0'
       
-      # Esegui la build di Hugo
-      - name: Build Hugo site
-        run: hugo
-        
       # Esegui lo script generate-posts.js
       - name: Esegui script generate-posts.js
         run: node generate-posts.js
+
+      # Esegui la build di Hugo
+      - name: Build Hugo site
+        run: hugo
         
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
