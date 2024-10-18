@@ -1,6 +1,6 @@
 baseURL = "https://simonesanfilippo.xyz/"  # URL del tuo sito
 languageCode = "it"               # Codice della lingua del sito
-title = "Il mio sito con Hugo"     # Titolo del sito
+title = "Simone Sanfilippo"     # Titolo del sito
 theme = "simonesanfilippo_theme"                 # Nome del tema Hugo che stai usando
 enableRobotsTXT = true             # Genera il file robots.txt automaticamente
 paginate = 10                      # Numero di post per pagina
@@ -22,7 +22,7 @@ paginate = 10                      # Numero di post per pagina
 
 # Configurazioni per i parametri del sito
 [params]
-  description = "Questo è il mio sito Hugo"
+  description = "Blog Simone Sanfilippo"
   author = "Simone Sanfilippo"
 
 # Impostazioni di output per generare contenuti statici
