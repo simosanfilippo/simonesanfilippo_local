@@ -15,6 +15,10 @@ paginate = 10                      # Numero di post per pagina
     name = "Home"
     url = "/"
     weight = 1
+  [[menu.main]]
+    name = "Archive"
+    url = "/archive/"
+    weight = 2
 
 # Configurazioni per i parametri del sito
 [params]
