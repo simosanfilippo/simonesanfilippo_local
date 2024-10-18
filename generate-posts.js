@@ -4,10 +4,15 @@ const path = require('path');
 
 // Directory where markdown files will be saved
 const outputDir = path.join(__dirname, 'content/posts');
+const archiveDir = path.join(__dirname, 'content/archive');
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
+if (!fs.existsSync(archiveDir)) {
+  fs.mkdirSync(archiveDir, { recursive: true });
+}
+fs.writeFileSync(path.join(archiveDir, `_index.md`), "", 'utf8');
 // Fetch JSON data from the feed URL
 const feedUrl = 'https://simone-sanfilippo.micro.blog/feed.json';
 

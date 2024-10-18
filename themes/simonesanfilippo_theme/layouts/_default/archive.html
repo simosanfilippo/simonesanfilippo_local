@@ -3,6 +3,7 @@
 		<h1 class="p-name">{{ .Title | upper }}</h1>
 	</header>
 	{{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+
 	{{ if gt (len $list) 0 }}
 		<p class="archive_categories">
 			{{ range $list }}
