@@ -22,7 +22,7 @@ jobs:
       
       # Esegui lo script generate-posts.js
       - name: Esegui script generate-posts.js
-        run: node generate-posts.js
+        run: node generate-posts.js && cat content/posts/chiss-perch-il.md && cat content/posts/titolo.md 
 
       # Esegui la build di Hugo
       - name: Build Hugo site
