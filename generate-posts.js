@@ -13,8 +13,9 @@ if (!fs.existsSync(archiveDir)) {
   fs.mkdirSync(archiveDir, { recursive: true });
 }
 fs.writeFileSync(path.join(archiveDir, `_index.md`), "", 'utf8');
-// Fetch JSON data from the feed URL
-const feedUrl = 'https://simone-sanfilippo.micro.blog/feed.json';
+
+// Fetch JSON data from the WordPress API feed URL
+const feedUrl = 'https://public-api.wordpress.com/wp/v2/sites/simonesanfilippo.art.blog/posts';
 
 https.get(feedUrl, (res) => {
   let data = '';
@@ -29,23 +30,24 @@ https.get(feedUrl, (res) => {
     const feed = JSON.parse(data);
 
     // Loop through each post in the JSON feed
-    feed.items.forEach(item => {
+    feed.forEach(item => {
       // Extract necessary data from each post
-      const { id, content_html, date_published, url, title } = item;
-      console.log(`Date published: ${date_published}`)
-      // Generate a clean filename based on the post URL or ID
-      const filename = url.split('/').pop().replace('.html', '') || id.split('/').pop();
+      const { id, content, date, link, title } = item;
+      console.log(`Date published: ${date}`);
+
+      // Generate a clean filename based on the post slug or ID
+      const filename = item.slug || id.toString();
       const filePath = path.join(outputDir, `${filename}.md`);
 
-const mdTitle = title?`title: "${title}"\n`:''
+      const mdTitle = title && title.rendered ? `title: "${title.rendered}"\n` : '';
 
-      // Create the markdown content with front matter (using external_url instead of url)
+      // Create the markdown content with front matter (using link as external_url)
       const markdownContent = `---
-${mdTitle}date: "${date_published}"
-external_url: "${url}"
+${mdTitle}date: "${date}"
+external_url: "${link}"
 type: "post"
 ---
-${content_html}
+${content.rendered}
 `;
 
       // Write the markdown content to a file
