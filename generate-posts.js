@@ -33,13 +33,14 @@ https.get(feedUrl, (res) => {
     feed.forEach(item => {
       // Extract necessary data from each post
       const { id, content, date, link, title } = item;
-      console.log(`Date published: ${date}`);
+      // console.log(`Date published: ${date}`);
 
       // Generate a clean filename based on the post slug or ID
+      console.log(`item.slug: ${item.slug}. id: ${id}`)
       const filename = item.slug || id.toString();
       const filePath = path.join(outputDir, `${filename}.md`);
 
-      const mdTitle = title && title.rendered ? `title: "${title.rendered}"\n` : '';
+      const mdTitle = (title && title.rendered ? `title: "${title.rendered}"\n` : '').replaceAll("&nbsp;"," ");
 
       // Create the markdown content with front matter (using link as external_url)
       const markdownContent = `---
@@ -52,7 +53,7 @@ ${content.rendered}
 
       // Write the markdown content to a file
       fs.writeFileSync(filePath, markdownContent, 'utf8');
-      console.log(`Generated ${filePath}`);
+      // console.log(`Generated ${filePath}`);
     });
   });
 
