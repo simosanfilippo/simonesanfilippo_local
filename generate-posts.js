@@ -1,6 +1,7 @@
 const fs = require('fs');
 const https = require('https');
 const path = require('path');
+const entities = require('entities'); // Importa la libreria per decodificare le entità HTML
 
 // Directory where markdown files will be saved
 const outputDir = path.join(__dirname, 'content/posts');
@@ -35,20 +36,26 @@ https.get(feedUrl, (res) => {
       const { id, content, date, link, title } = item;
       // console.log(`Date published: ${date}`);
 
+      // Decode HTML entities in the content and title
+      let postContent = entities.decodeHTML(content.rendered);
+      let postTitle = title?.rendered ? entities.decodeHTML(title.rendered) : '';
+
+      // Optional: Remove specific unwanted HTML entities (like &nbsp; or &#8211;)
+      postContent = postContent.replace(/&nbsp;/g, ' ').replace(/&#8211;/g, '–');
+
       // Generate a clean filename based on the post slug or ID
       console.log(`item.slug: ${item.slug}. id: ${id}`)
       const filename = item.slug || id.toString();
       const filePath = path.join(outputDir, `${filename}.md`);
 
-      const mdTitle = (title && title.rendered ? `title: "${title.rendered}"\n` : '').replaceAll("&nbsp;"," ");
-
+      const mdTitle = postTitle ? `title: "${postTitle}"\n` : '';
       // Create the markdown content with front matter (using link as external_url)
       const markdownContent = `---
 ${mdTitle}date: "${date}"
 external_url: "${link}"
 type: "post"
 ---
-${content.rendered}
+${postContent}
 `;
 
       // Write the markdown content to a file
