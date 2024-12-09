@@ -5,6 +5,8 @@
 	  {{ with .Title }}
     <h1 class="p-name">{{ . }}</h1>
     {{ end }}
+    <p class="reading-time">{{ printf "[%d min.]" .ReadingTime }}</p>
+
   </header>
   <section class="e-content post-body">
       {{ .Content }}

@@ -2,7 +2,10 @@
     <article class="h-entry">
     {{ if .Title }}
         <header>
-            <h2><a href="{{ .Permalink }}" class="p-name">{{ .Title }}</a></h2>
+            <h2>
+                <a href="{{ .Permalink }}" class="p-name">{{ .Title }}</a>
+            </h2>
+            <p class="reading-time">{{ printf "[%d min.]" .ReadingTime }}</p>
         </header>
         <section class="post-body e-content content-puntini">
 {{ $truncatedContent := .Content | truncate 300 "" }} <!-- Rimuovi i puntini di truncate -->

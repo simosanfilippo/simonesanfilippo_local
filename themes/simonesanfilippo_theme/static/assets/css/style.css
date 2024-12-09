@@ -44,6 +44,9 @@ body{
   font-size: var(--font-size);
   font-family: var(--font-family-mono);
 }
+.reading-time {
+  color:red;
+}
 address,
 blockquote,
 dl,
