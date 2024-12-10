@@ -6,6 +6,7 @@ const entities = require('entities'); // Importa la libreria per decodificare le
 // Directory where markdown files will be saved
 const outputDir = path.join(__dirname, 'content/posts');
 const archiveDir = path.join(__dirname, 'content/archive');
+
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
