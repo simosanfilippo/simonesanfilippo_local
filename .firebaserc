@@ -1,7 +1,5 @@
 {
   "projects": {
-    "blogsimonesanfilippo": "blogsimonesanfilippo"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "nuovoblogsimonesanfilippo"
+  }
 }
